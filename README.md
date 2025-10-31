@@ -56,6 +56,7 @@ python train.py --weights weights/best.pt --cfg models/yolov5n.yaml --data data/
 Since the `permute` and `view` operations in the YOLOv5 detection head are not supported by Vitis-AI,  
 the final reshaping and decoding steps should be removed from the model’s forward function and  
 reimplemented externally in the post-processing stage.
+
 In `models/yolo.py`, remove the last layer in the detection head:
 ```
 def forward(self, x):
@@ -145,7 +146,7 @@ Run the calibration process:
 This exports a configuration file (quant_info.json) containing the collected quantization parameters
 that will be reused in the next step.
 
-###Step 2 — Test / Export Mode (quant_mode=test)
+### Step 2 — Test / Export Mode (quant_mode=test)
 
 In Test Mode, the quantizer applies the previously collected calibration statistics
 to generate a fully quantized model and export it in Vitis-AI–compatible .xmodel format.
@@ -176,4 +177,10 @@ Run the compilation command:
    -x build_y5n/quant_model/DetectionModel_int.xmodel \
    -a /opt/vitis_ai/compiler/arch/DPUCZDX8G/KV260/arch.json \
   -o kv260_xmodel
+```
+
+## Run inference
+
+```bash
+python detect.py --weights yolov5n.pt --yaml models/yolov5n.yaml --source data/images --data data/coco128.yaml --conf-thres 0.3  --conf-thres 0.35
 ```
