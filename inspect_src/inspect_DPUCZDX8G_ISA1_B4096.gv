@@ -1,0 +1,738 @@
+digraph DetectionModel {
+	input_0 [label="type:input
+name:DetectionModel::input_0
+assigned device:dpu
+out shape:[(1, 640, 640, 3)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[0]/Conv2d[conv]/input.3" [label="type:conv2d
+name:DetectionModel::DetectionModel/Conv[model]/Conv[0]/Conv2d[conv]/input.3
+assigned device:dpu
+out shape:[(1, 320, 320, 16)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[0]/LeakyReLU[act]/input.7" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/Conv[model]/Conv[0]/LeakyReLU[act]/input.7
+assigned device:dpu
+out shape:[(1, 320, 320, 16)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[1]/Conv2d[conv]/input.9" [label="type:conv2d
+name:DetectionModel::DetectionModel/Conv[model]/Conv[1]/Conv2d[conv]/input.9
+assigned device:dpu
+out shape:[(1, 160, 160, 32)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[1]/LeakyReLU[act]/input.13" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/Conv[model]/Conv[1]/LeakyReLU[act]/input.13
+assigned device:dpu
+out shape:[(1, 160, 160, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Conv[cv1]/Conv2d[conv]/input.15" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Conv[cv1]/Conv2d[conv]/input.15
+assigned device:dpu
+out shape:[(1, 160, 160, 16)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Conv[cv1]/LeakyReLU[act]/input.19" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Conv[cv1]/LeakyReLU[act]/input.19
+assigned device:dpu
+out shape:[(1, 160, 160, 16)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.21" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.21
+assigned device:dpu
+out shape:[(1, 160, 160, 16)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.25" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.25
+assigned device:dpu
+out shape:[(1, 160, 160, 16)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.27" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.27
+assigned device:dpu
+out shape:[(1, 160, 160, 16)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9022" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9022
+assigned device:dpu
+out shape:[(1, 160, 160, 16)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/9024" [label="type:elemwise_add
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/9024
+assigned device:dpu
+out shape:[(1, 160, 160, 16)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Conv[cv2]/Conv2d[conv]/input.31" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Conv[cv2]/Conv2d[conv]/input.31
+assigned device:dpu
+out shape:[(1, 160, 160, 16)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Conv[cv2]/LeakyReLU[act]/9051" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Conv[cv2]/LeakyReLU[act]/9051
+assigned device:dpu
+out shape:[(1, 160, 160, 16)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/input.35" [label="type:concat
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/input.35
+assigned device:dpu
+out shape:[(1, 160, 160, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Conv[cv3]/Conv2d[conv]/input.37" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Conv[cv3]/Conv2d[conv]/input.37
+assigned device:dpu
+out shape:[(1, 160, 160, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[2]/Conv[cv3]/LeakyReLU[act]/input.41" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[2]/Conv[cv3]/LeakyReLU[act]/input.41
+assigned device:dpu
+out shape:[(1, 160, 160, 32)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[3]/Conv2d[conv]/input.43" [label="type:conv2d
+name:DetectionModel::DetectionModel/Conv[model]/Conv[3]/Conv2d[conv]/input.43
+assigned device:dpu
+out shape:[(1, 80, 80, 64)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[3]/LeakyReLU[act]/input.47" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/Conv[model]/Conv[3]/LeakyReLU[act]/input.47
+assigned device:dpu
+out shape:[(1, 80, 80, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Conv[cv1]/Conv2d[conv]/input.49" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Conv[cv1]/Conv2d[conv]/input.49
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Conv[cv1]/LeakyReLU[act]/input.53" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Conv[cv1]/LeakyReLU[act]/input.53
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.55" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.55
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.59" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.59
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.61" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.61
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9189" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9189
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/input.65" [label="type:elemwise_add
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/input.65
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv1]/Conv2d[conv]/input.67" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv1]/Conv2d[conv]/input.67
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv1]/LeakyReLU[act]/input.71" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv1]/LeakyReLU[act]/input.71
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv2]/Conv2d[conv]/input.73" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv2]/Conv2d[conv]/input.73
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv2]/LeakyReLU[act]/9245" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv2]/LeakyReLU[act]/9245
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/9247" [label="type:elemwise_add
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/9247
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Conv[cv2]/Conv2d[conv]/input.77" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Conv[cv2]/Conv2d[conv]/input.77
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Conv[cv2]/LeakyReLU[act]/9274" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Conv[cv2]/LeakyReLU[act]/9274
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/input.81" [label="type:concat
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/input.81
+assigned device:dpu
+out shape:[(1, 80, 80, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Conv[cv3]/Conv2d[conv]/input.83" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Conv[cv3]/Conv2d[conv]/input.83
+assigned device:dpu
+out shape:[(1, 80, 80, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[4]/Conv[cv3]/LeakyReLU[act]/input.87" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[4]/Conv[cv3]/LeakyReLU[act]/input.87
+assigned device:dpu
+out shape:[(1, 80, 80, 64)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[5]/Conv2d[conv]/input.89" [label="type:conv2d
+name:DetectionModel::DetectionModel/Conv[model]/Conv[5]/Conv2d[conv]/input.89
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[5]/LeakyReLU[act]/input.93" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/Conv[model]/Conv[5]/LeakyReLU[act]/input.93
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Conv[cv1]/Conv2d[conv]/input.95" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Conv[cv1]/Conv2d[conv]/input.95
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Conv[cv1]/LeakyReLU[act]/input.99" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Conv[cv1]/LeakyReLU[act]/input.99
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.101" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.101
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.105" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.105
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.107" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.107
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9412" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9412
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/input.111" [label="type:elemwise_add
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/input.111
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv1]/Conv2d[conv]/input.113" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv1]/Conv2d[conv]/input.113
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv1]/LeakyReLU[act]/input.117" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv1]/LeakyReLU[act]/input.117
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv2]/Conv2d[conv]/input.119" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv2]/Conv2d[conv]/input.119
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv2]/LeakyReLU[act]/9468" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv2]/LeakyReLU[act]/9468
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/input.123" [label="type:elemwise_add
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/input.123
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv1]/Conv2d[conv]/input.125" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv1]/Conv2d[conv]/input.125
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv1]/LeakyReLU[act]/input.129" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv1]/LeakyReLU[act]/input.129
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv2]/Conv2d[conv]/input.131" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv2]/Conv2d[conv]/input.131
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv2]/LeakyReLU[act]/9524" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv2]/LeakyReLU[act]/9524
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/9526" [label="type:elemwise_add
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/9526
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Conv[cv2]/Conv2d[conv]/input.135" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Conv[cv2]/Conv2d[conv]/input.135
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Conv[cv2]/LeakyReLU[act]/9553" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Conv[cv2]/LeakyReLU[act]/9553
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/input.139" [label="type:concat
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/input.139
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Conv[cv3]/Conv2d[conv]/input.141" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Conv[cv3]/Conv2d[conv]/input.141
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[6]/Conv[cv3]/LeakyReLU[act]/input.145" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[6]/Conv[cv3]/LeakyReLU[act]/input.145
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[7]/Conv2d[conv]/input.147" [label="type:conv2d
+name:DetectionModel::DetectionModel/Conv[model]/Conv[7]/Conv2d[conv]/input.147
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[7]/LeakyReLU[act]/input.151" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/Conv[model]/Conv[7]/LeakyReLU[act]/input.151
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Conv[cv1]/Conv2d[conv]/input.153" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Conv[cv1]/Conv2d[conv]/input.153
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Conv[cv1]/LeakyReLU[act]/input.157" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Conv[cv1]/LeakyReLU[act]/input.157
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.159" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.159
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.163" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.163
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.165" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.165
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9691" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9691
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/9693" [label="type:elemwise_add
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/9693
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Conv[cv2]/Conv2d[conv]/input.169" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Conv[cv2]/Conv2d[conv]/input.169
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Conv[cv2]/LeakyReLU[act]/9720" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Conv[cv2]/LeakyReLU[act]/9720
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/input.173" [label="type:concat
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/input.173
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Conv[cv3]/Conv2d[conv]/input.175" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Conv[cv3]/Conv2d[conv]/input.175
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/C3[model]/C3[8]/Conv[cv3]/LeakyReLU[act]/input.179" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[8]/Conv[cv3]/LeakyReLU[act]/input.179
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/SPPF[model]/SPPF[9]/Conv[cv1]/Conv2d[conv]/input.181" [label="type:conv2d
+name:DetectionModel::DetectionModel/SPPF[model]/SPPF[9]/Conv[cv1]/Conv2d[conv]/input.181
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/SPPF[model]/SPPF[9]/Conv[cv1]/LeakyReLU[act]/9777" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/SPPF[model]/SPPF[9]/Conv[cv1]/LeakyReLU[act]/9777
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9791" [label="type:maxpool
+name:DetectionModel::DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9791
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9805" [label="type:maxpool
+name:DetectionModel::DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9805
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9819" [label="type:maxpool
+name:DetectionModel::DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9819
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/SPPF[model]/SPPF[9]/input.185" [label="type:concat
+name:DetectionModel::DetectionModel/SPPF[model]/SPPF[9]/input.185
+assigned device:dpu
+out shape:[(1, 20, 20, 512)]" color=blue]
+	"DetectionModel/SPPF[model]/SPPF[9]/Conv[cv2]/Conv2d[conv]/input.187" [label="type:conv2d
+name:DetectionModel::DetectionModel/SPPF[model]/SPPF[9]/Conv[cv2]/Conv2d[conv]/input.187
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/SPPF[model]/SPPF[9]/Conv[cv2]/LeakyReLU[act]/input.191" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/SPPF[model]/SPPF[9]/Conv[cv2]/LeakyReLU[act]/input.191
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[10]/Conv2d[conv]/input.193" [label="type:conv2d
+name:DetectionModel::DetectionModel/Conv[model]/Conv[10]/Conv2d[conv]/input.193
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[10]/LeakyReLU[act]/input.197" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/Conv[model]/Conv[10]/LeakyReLU[act]/input.197
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/Upsample[model]/Upsample[11]/9881" [label="type:resize
+name:DetectionModel::DetectionModel/Upsample[model]/Upsample[11]/9881
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/Concat[model]/Concat[12]/input.199" [label="type:concat
+name:DetectionModel::DetectionModel/Concat[model]/Concat[12]/input.199
+assigned device:dpu
+out shape:[(1, 40, 40, 256)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Conv[cv1]/Conv2d[conv]/input.201" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Conv[cv1]/Conv2d[conv]/input.201
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Conv[cv1]/LeakyReLU[act]/input.205" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Conv[cv1]/LeakyReLU[act]/input.205
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.207" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.207
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.211" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.211
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.213" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.213
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9965" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9965
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Conv[cv2]/Conv2d[conv]/input.217" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Conv[cv2]/Conv2d[conv]/input.217
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Conv[cv2]/LeakyReLU[act]/9992" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Conv[cv2]/LeakyReLU[act]/9992
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/input.221" [label="type:concat
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/input.221
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Conv[cv3]/Conv2d[conv]/input.223" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Conv[cv3]/Conv2d[conv]/input.223
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[13]/Conv[cv3]/LeakyReLU[act]/input.227" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[13]/Conv[cv3]/LeakyReLU[act]/input.227
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[14]/Conv2d[conv]/input.229" [label="type:conv2d
+name:DetectionModel::DetectionModel/Conv[model]/Conv[14]/Conv2d[conv]/input.229
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[14]/LeakyReLU[act]/input.233" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/Conv[model]/Conv[14]/LeakyReLU[act]/input.233
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/Upsample[model]/Upsample[15]/10054" [label="type:resize
+name:DetectionModel::DetectionModel/Upsample[model]/Upsample[15]/10054
+assigned device:dpu
+out shape:[(1, 80, 80, 64)]" color=blue]
+	"DetectionModel/Concat[model]/Concat[16]/input.235" [label="type:concat
+name:DetectionModel::DetectionModel/Concat[model]/Concat[16]/input.235
+assigned device:dpu
+out shape:[(1, 80, 80, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Conv[cv1]/Conv2d[conv]/input.237" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Conv[cv1]/Conv2d[conv]/input.237
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Conv[cv1]/LeakyReLU[act]/input.241" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Conv[cv1]/LeakyReLU[act]/input.241
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.243" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.243
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.247" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.247
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.249" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.249
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10138" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10138
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Conv[cv2]/Conv2d[conv]/input.253" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Conv[cv2]/Conv2d[conv]/input.253
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Conv[cv2]/LeakyReLU[act]/10165" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Conv[cv2]/LeakyReLU[act]/10165
+assigned device:dpu
+out shape:[(1, 80, 80, 32)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/input.257" [label="type:concat
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/input.257
+assigned device:dpu
+out shape:[(1, 80, 80, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Conv[cv3]/Conv2d[conv]/input.259" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Conv[cv3]/Conv2d[conv]/input.259
+assigned device:dpu
+out shape:[(1, 80, 80, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[17]/Conv[cv3]/LeakyReLU[act]/input.263" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[17]/Conv[cv3]/LeakyReLU[act]/input.263
+assigned device:dpu
+out shape:[(1, 80, 80, 64)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[18]/Conv2d[conv]/input.265" [label="type:conv2d
+name:DetectionModel::DetectionModel/Conv[model]/Conv[18]/Conv2d[conv]/input.265
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[18]/LeakyReLU[act]/10222" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/Conv[model]/Conv[18]/LeakyReLU[act]/10222
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/Concat[model]/Concat[19]/input.269" [label="type:concat
+name:DetectionModel::DetectionModel/Concat[model]/Concat[19]/input.269
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Conv[cv1]/Conv2d[conv]/input.271" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Conv[cv1]/Conv2d[conv]/input.271
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Conv[cv1]/LeakyReLU[act]/input.275" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Conv[cv1]/LeakyReLU[act]/input.275
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.277" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.277
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.281" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.281
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.283" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.283
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10306" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10306
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Conv[cv2]/Conv2d[conv]/input.287" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Conv[cv2]/Conv2d[conv]/input.287
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Conv[cv2]/LeakyReLU[act]/10333" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Conv[cv2]/LeakyReLU[act]/10333
+assigned device:dpu
+out shape:[(1, 40, 40, 64)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/input.291" [label="type:concat
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/input.291
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Conv[cv3]/Conv2d[conv]/input.293" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Conv[cv3]/Conv2d[conv]/input.293
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[20]/Conv[cv3]/LeakyReLU[act]/input.297" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[20]/Conv[cv3]/LeakyReLU[act]/input.297
+assigned device:dpu
+out shape:[(1, 40, 40, 128)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[21]/Conv2d[conv]/input.299" [label="type:conv2d
+name:DetectionModel::DetectionModel/Conv[model]/Conv[21]/Conv2d[conv]/input.299
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/Conv[model]/Conv[21]/LeakyReLU[act]/10390" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/Conv[model]/Conv[21]/LeakyReLU[act]/10390
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/Concat[model]/Concat[22]/input.303" [label="type:concat
+name:DetectionModel::DetectionModel/Concat[model]/Concat[22]/input.303
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Conv[cv1]/Conv2d[conv]/input.305" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Conv[cv1]/Conv2d[conv]/input.305
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Conv[cv1]/LeakyReLU[act]/input.309" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Conv[cv1]/LeakyReLU[act]/input.309
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.311" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.311
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.315" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.315
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.317" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.317
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10474" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10474
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Conv[cv2]/Conv2d[conv]/input.321" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Conv[cv2]/Conv2d[conv]/input.321
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Conv[cv2]/LeakyReLU[act]/10501" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Conv[cv2]/LeakyReLU[act]/10501
+assigned device:dpu
+out shape:[(1, 20, 20, 128)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/input.325" [label="type:concat
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/input.325
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Conv[cv3]/Conv2d[conv]/input.327" [label="type:conv2d
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Conv[cv3]/Conv2d[conv]/input.327
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/C3[model]/C3[23]/Conv[cv3]/LeakyReLU[act]/input" [label="type:leaky_relu
+name:DetectionModel::DetectionModel/C3[model]/C3[23]/Conv[cv3]/LeakyReLU[act]/input
+assigned device:dpu
+out shape:[(1, 20, 20, 256)]" color=blue]
+	"DetectionModel/Detect[model]/Detect[24]/Conv2d[m]/ModuleList[0]/10550" [label="type:conv2d
+name:DetectionModel::DetectionModel/Detect[model]/Detect[24]/Conv2d[m]/ModuleList[0]/10550
+assigned device:dpu
+out shape:[(1, 80, 80, 255)]" color=blue]
+	"DetectionModel/Detect[model]/Detect[24]/Conv2d[m]/ModuleList[1]/10569" [label="type:conv2d
+name:DetectionModel::DetectionModel/Detect[model]/Detect[24]/Conv2d[m]/ModuleList[1]/10569
+assigned device:dpu
+out shape:[(1, 40, 40, 255)]" color=blue]
+	"DetectionModel/Detect[model]/Detect[24]/Conv2d[m]/ModuleList[2]/10588" [label="type:conv2d
+name:DetectionModel::DetectionModel/Detect[model]/Detect[24]/Conv2d[m]/ModuleList[2]/10588
+assigned device:dpu
+out shape:[(1, 20, 20, 255)]" color=blue]
+	input_0 -> "DetectionModel/Conv[model]/Conv[0]/Conv2d[conv]/input.3"
+	"DetectionModel/Conv[model]/Conv[0]/Conv2d[conv]/input.3" -> "DetectionModel/Conv[model]/Conv[0]/LeakyReLU[act]/input.7"
+	"DetectionModel/Conv[model]/Conv[0]/LeakyReLU[act]/input.7" -> "DetectionModel/Conv[model]/Conv[1]/Conv2d[conv]/input.9"
+	"DetectionModel/Conv[model]/Conv[1]/Conv2d[conv]/input.9" -> "DetectionModel/Conv[model]/Conv[1]/LeakyReLU[act]/input.13"
+	"DetectionModel/Conv[model]/Conv[1]/LeakyReLU[act]/input.13" -> "DetectionModel/C3[model]/C3[2]/Conv[cv1]/Conv2d[conv]/input.15"
+	"DetectionModel/Conv[model]/Conv[1]/LeakyReLU[act]/input.13" -> "DetectionModel/C3[model]/C3[2]/Conv[cv2]/Conv2d[conv]/input.31"
+	"DetectionModel/C3[model]/C3[2]/Conv[cv1]/Conv2d[conv]/input.15" -> "DetectionModel/C3[model]/C3[2]/Conv[cv1]/LeakyReLU[act]/input.19"
+	"DetectionModel/C3[model]/C3[2]/Conv[cv1]/LeakyReLU[act]/input.19" -> "DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.21"
+	"DetectionModel/C3[model]/C3[2]/Conv[cv1]/LeakyReLU[act]/input.19" -> "DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/9024"
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.21" -> "DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.25"
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.25" -> "DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.27"
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.27" -> "DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9022"
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9022" -> "DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/9024"
+	"DetectionModel/C3[model]/C3[2]/Sequential[m]/Bottleneck[0]/9024" -> "DetectionModel/C3[model]/C3[2]/input.35"
+	"DetectionModel/C3[model]/C3[2]/Conv[cv2]/Conv2d[conv]/input.31" -> "DetectionModel/C3[model]/C3[2]/Conv[cv2]/LeakyReLU[act]/9051"
+	"DetectionModel/C3[model]/C3[2]/Conv[cv2]/LeakyReLU[act]/9051" -> "DetectionModel/C3[model]/C3[2]/input.35"
+	"DetectionModel/C3[model]/C3[2]/input.35" -> "DetectionModel/C3[model]/C3[2]/Conv[cv3]/Conv2d[conv]/input.37"
+	"DetectionModel/C3[model]/C3[2]/Conv[cv3]/Conv2d[conv]/input.37" -> "DetectionModel/C3[model]/C3[2]/Conv[cv3]/LeakyReLU[act]/input.41"
+	"DetectionModel/C3[model]/C3[2]/Conv[cv3]/LeakyReLU[act]/input.41" -> "DetectionModel/Conv[model]/Conv[3]/Conv2d[conv]/input.43"
+	"DetectionModel/Conv[model]/Conv[3]/Conv2d[conv]/input.43" -> "DetectionModel/Conv[model]/Conv[3]/LeakyReLU[act]/input.47"
+	"DetectionModel/Conv[model]/Conv[3]/LeakyReLU[act]/input.47" -> "DetectionModel/C3[model]/C3[4]/Conv[cv1]/Conv2d[conv]/input.49"
+	"DetectionModel/Conv[model]/Conv[3]/LeakyReLU[act]/input.47" -> "DetectionModel/C3[model]/C3[4]/Conv[cv2]/Conv2d[conv]/input.77"
+	"DetectionModel/C3[model]/C3[4]/Conv[cv1]/Conv2d[conv]/input.49" -> "DetectionModel/C3[model]/C3[4]/Conv[cv1]/LeakyReLU[act]/input.53"
+	"DetectionModel/C3[model]/C3[4]/Conv[cv1]/LeakyReLU[act]/input.53" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.55"
+	"DetectionModel/C3[model]/C3[4]/Conv[cv1]/LeakyReLU[act]/input.53" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/input.65"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.55" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.59"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.59" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.61"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.61" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9189"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9189" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/input.65"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/input.65" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv1]/Conv2d[conv]/input.67"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[0]/input.65" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/9247"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv1]/Conv2d[conv]/input.67" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv1]/LeakyReLU[act]/input.71"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv1]/LeakyReLU[act]/input.71" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv2]/Conv2d[conv]/input.73"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv2]/Conv2d[conv]/input.73" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv2]/LeakyReLU[act]/9245"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/Conv[cv2]/LeakyReLU[act]/9245" -> "DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/9247"
+	"DetectionModel/C3[model]/C3[4]/Sequential[m]/Bottleneck[1]/9247" -> "DetectionModel/C3[model]/C3[4]/input.81"
+	"DetectionModel/C3[model]/C3[4]/Conv[cv2]/Conv2d[conv]/input.77" -> "DetectionModel/C3[model]/C3[4]/Conv[cv2]/LeakyReLU[act]/9274"
+	"DetectionModel/C3[model]/C3[4]/Conv[cv2]/LeakyReLU[act]/9274" -> "DetectionModel/C3[model]/C3[4]/input.81"
+	"DetectionModel/C3[model]/C3[4]/input.81" -> "DetectionModel/C3[model]/C3[4]/Conv[cv3]/Conv2d[conv]/input.83"
+	"DetectionModel/C3[model]/C3[4]/Conv[cv3]/Conv2d[conv]/input.83" -> "DetectionModel/C3[model]/C3[4]/Conv[cv3]/LeakyReLU[act]/input.87"
+	"DetectionModel/C3[model]/C3[4]/Conv[cv3]/LeakyReLU[act]/input.87" -> "DetectionModel/Conv[model]/Conv[5]/Conv2d[conv]/input.89"
+	"DetectionModel/C3[model]/C3[4]/Conv[cv3]/LeakyReLU[act]/input.87" -> "DetectionModel/Concat[model]/Concat[16]/input.235"
+	"DetectionModel/Conv[model]/Conv[5]/Conv2d[conv]/input.89" -> "DetectionModel/Conv[model]/Conv[5]/LeakyReLU[act]/input.93"
+	"DetectionModel/Conv[model]/Conv[5]/LeakyReLU[act]/input.93" -> "DetectionModel/C3[model]/C3[6]/Conv[cv1]/Conv2d[conv]/input.95"
+	"DetectionModel/Conv[model]/Conv[5]/LeakyReLU[act]/input.93" -> "DetectionModel/C3[model]/C3[6]/Conv[cv2]/Conv2d[conv]/input.135"
+	"DetectionModel/C3[model]/C3[6]/Conv[cv1]/Conv2d[conv]/input.95" -> "DetectionModel/C3[model]/C3[6]/Conv[cv1]/LeakyReLU[act]/input.99"
+	"DetectionModel/C3[model]/C3[6]/Conv[cv1]/LeakyReLU[act]/input.99" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.101"
+	"DetectionModel/C3[model]/C3[6]/Conv[cv1]/LeakyReLU[act]/input.99" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/input.111"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.101" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.105"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.105" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.107"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.107" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9412"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9412" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/input.111"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/input.111" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv1]/Conv2d[conv]/input.113"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[0]/input.111" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/input.123"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv1]/Conv2d[conv]/input.113" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv1]/LeakyReLU[act]/input.117"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv1]/LeakyReLU[act]/input.117" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv2]/Conv2d[conv]/input.119"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv2]/Conv2d[conv]/input.119" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv2]/LeakyReLU[act]/9468"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/Conv[cv2]/LeakyReLU[act]/9468" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/input.123"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/input.123" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv1]/Conv2d[conv]/input.125"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[1]/input.123" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/9526"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv1]/Conv2d[conv]/input.125" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv1]/LeakyReLU[act]/input.129"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv1]/LeakyReLU[act]/input.129" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv2]/Conv2d[conv]/input.131"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv2]/Conv2d[conv]/input.131" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv2]/LeakyReLU[act]/9524"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/Conv[cv2]/LeakyReLU[act]/9524" -> "DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/9526"
+	"DetectionModel/C3[model]/C3[6]/Sequential[m]/Bottleneck[2]/9526" -> "DetectionModel/C3[model]/C3[6]/input.139"
+	"DetectionModel/C3[model]/C3[6]/Conv[cv2]/Conv2d[conv]/input.135" -> "DetectionModel/C3[model]/C3[6]/Conv[cv2]/LeakyReLU[act]/9553"
+	"DetectionModel/C3[model]/C3[6]/Conv[cv2]/LeakyReLU[act]/9553" -> "DetectionModel/C3[model]/C3[6]/input.139"
+	"DetectionModel/C3[model]/C3[6]/input.139" -> "DetectionModel/C3[model]/C3[6]/Conv[cv3]/Conv2d[conv]/input.141"
+	"DetectionModel/C3[model]/C3[6]/Conv[cv3]/Conv2d[conv]/input.141" -> "DetectionModel/C3[model]/C3[6]/Conv[cv3]/LeakyReLU[act]/input.145"
+	"DetectionModel/C3[model]/C3[6]/Conv[cv3]/LeakyReLU[act]/input.145" -> "DetectionModel/Conv[model]/Conv[7]/Conv2d[conv]/input.147"
+	"DetectionModel/C3[model]/C3[6]/Conv[cv3]/LeakyReLU[act]/input.145" -> "DetectionModel/Concat[model]/Concat[12]/input.199"
+	"DetectionModel/Conv[model]/Conv[7]/Conv2d[conv]/input.147" -> "DetectionModel/Conv[model]/Conv[7]/LeakyReLU[act]/input.151"
+	"DetectionModel/Conv[model]/Conv[7]/LeakyReLU[act]/input.151" -> "DetectionModel/C3[model]/C3[8]/Conv[cv1]/Conv2d[conv]/input.153"
+	"DetectionModel/Conv[model]/Conv[7]/LeakyReLU[act]/input.151" -> "DetectionModel/C3[model]/C3[8]/Conv[cv2]/Conv2d[conv]/input.169"
+	"DetectionModel/C3[model]/C3[8]/Conv[cv1]/Conv2d[conv]/input.153" -> "DetectionModel/C3[model]/C3[8]/Conv[cv1]/LeakyReLU[act]/input.157"
+	"DetectionModel/C3[model]/C3[8]/Conv[cv1]/LeakyReLU[act]/input.157" -> "DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.159"
+	"DetectionModel/C3[model]/C3[8]/Conv[cv1]/LeakyReLU[act]/input.157" -> "DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/9693"
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.159" -> "DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.163"
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.163" -> "DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.165"
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.165" -> "DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9691"
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9691" -> "DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/9693"
+	"DetectionModel/C3[model]/C3[8]/Sequential[m]/Bottleneck[0]/9693" -> "DetectionModel/C3[model]/C3[8]/input.173"
+	"DetectionModel/C3[model]/C3[8]/Conv[cv2]/Conv2d[conv]/input.169" -> "DetectionModel/C3[model]/C3[8]/Conv[cv2]/LeakyReLU[act]/9720"
+	"DetectionModel/C3[model]/C3[8]/Conv[cv2]/LeakyReLU[act]/9720" -> "DetectionModel/C3[model]/C3[8]/input.173"
+	"DetectionModel/C3[model]/C3[8]/input.173" -> "DetectionModel/C3[model]/C3[8]/Conv[cv3]/Conv2d[conv]/input.175"
+	"DetectionModel/C3[model]/C3[8]/Conv[cv3]/Conv2d[conv]/input.175" -> "DetectionModel/C3[model]/C3[8]/Conv[cv3]/LeakyReLU[act]/input.179"
+	"DetectionModel/C3[model]/C3[8]/Conv[cv3]/LeakyReLU[act]/input.179" -> "DetectionModel/SPPF[model]/SPPF[9]/Conv[cv1]/Conv2d[conv]/input.181"
+	"DetectionModel/SPPF[model]/SPPF[9]/Conv[cv1]/Conv2d[conv]/input.181" -> "DetectionModel/SPPF[model]/SPPF[9]/Conv[cv1]/LeakyReLU[act]/9777"
+	"DetectionModel/SPPF[model]/SPPF[9]/Conv[cv1]/LeakyReLU[act]/9777" -> "DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9791"
+	"DetectionModel/SPPF[model]/SPPF[9]/Conv[cv1]/LeakyReLU[act]/9777" -> "DetectionModel/SPPF[model]/SPPF[9]/input.185"
+	"DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9791" -> "DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9805"
+	"DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9791" -> "DetectionModel/SPPF[model]/SPPF[9]/input.185"
+	"DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9805" -> "DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9819"
+	"DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9805" -> "DetectionModel/SPPF[model]/SPPF[9]/input.185"
+	"DetectionModel/SPPF[model]/SPPF[9]/MaxPool2d[m]/9819" -> "DetectionModel/SPPF[model]/SPPF[9]/input.185"
+	"DetectionModel/SPPF[model]/SPPF[9]/input.185" -> "DetectionModel/SPPF[model]/SPPF[9]/Conv[cv2]/Conv2d[conv]/input.187"
+	"DetectionModel/SPPF[model]/SPPF[9]/Conv[cv2]/Conv2d[conv]/input.187" -> "DetectionModel/SPPF[model]/SPPF[9]/Conv[cv2]/LeakyReLU[act]/input.191"
+	"DetectionModel/SPPF[model]/SPPF[9]/Conv[cv2]/LeakyReLU[act]/input.191" -> "DetectionModel/Conv[model]/Conv[10]/Conv2d[conv]/input.193"
+	"DetectionModel/Conv[model]/Conv[10]/Conv2d[conv]/input.193" -> "DetectionModel/Conv[model]/Conv[10]/LeakyReLU[act]/input.197"
+	"DetectionModel/Conv[model]/Conv[10]/LeakyReLU[act]/input.197" -> "DetectionModel/Upsample[model]/Upsample[11]/9881"
+	"DetectionModel/Conv[model]/Conv[10]/LeakyReLU[act]/input.197" -> "DetectionModel/Concat[model]/Concat[22]/input.303"
+	"DetectionModel/Upsample[model]/Upsample[11]/9881" -> "DetectionModel/Concat[model]/Concat[12]/input.199"
+	"DetectionModel/Concat[model]/Concat[12]/input.199" -> "DetectionModel/C3[model]/C3[13]/Conv[cv1]/Conv2d[conv]/input.201"
+	"DetectionModel/Concat[model]/Concat[12]/input.199" -> "DetectionModel/C3[model]/C3[13]/Conv[cv2]/Conv2d[conv]/input.217"
+	"DetectionModel/C3[model]/C3[13]/Conv[cv1]/Conv2d[conv]/input.201" -> "DetectionModel/C3[model]/C3[13]/Conv[cv1]/LeakyReLU[act]/input.205"
+	"DetectionModel/C3[model]/C3[13]/Conv[cv1]/LeakyReLU[act]/input.205" -> "DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.207"
+	"DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.207" -> "DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.211"
+	"DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.211" -> "DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.213"
+	"DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.213" -> "DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9965"
+	"DetectionModel/C3[model]/C3[13]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/9965" -> "DetectionModel/C3[model]/C3[13]/input.221"
+	"DetectionModel/C3[model]/C3[13]/Conv[cv2]/Conv2d[conv]/input.217" -> "DetectionModel/C3[model]/C3[13]/Conv[cv2]/LeakyReLU[act]/9992"
+	"DetectionModel/C3[model]/C3[13]/Conv[cv2]/LeakyReLU[act]/9992" -> "DetectionModel/C3[model]/C3[13]/input.221"
+	"DetectionModel/C3[model]/C3[13]/input.221" -> "DetectionModel/C3[model]/C3[13]/Conv[cv3]/Conv2d[conv]/input.223"
+	"DetectionModel/C3[model]/C3[13]/Conv[cv3]/Conv2d[conv]/input.223" -> "DetectionModel/C3[model]/C3[13]/Conv[cv3]/LeakyReLU[act]/input.227"
+	"DetectionModel/C3[model]/C3[13]/Conv[cv3]/LeakyReLU[act]/input.227" -> "DetectionModel/Conv[model]/Conv[14]/Conv2d[conv]/input.229"
+	"DetectionModel/Conv[model]/Conv[14]/Conv2d[conv]/input.229" -> "DetectionModel/Conv[model]/Conv[14]/LeakyReLU[act]/input.233"
+	"DetectionModel/Conv[model]/Conv[14]/LeakyReLU[act]/input.233" -> "DetectionModel/Upsample[model]/Upsample[15]/10054"
+	"DetectionModel/Conv[model]/Conv[14]/LeakyReLU[act]/input.233" -> "DetectionModel/Concat[model]/Concat[19]/input.269"
+	"DetectionModel/Upsample[model]/Upsample[15]/10054" -> "DetectionModel/Concat[model]/Concat[16]/input.235"
+	"DetectionModel/Concat[model]/Concat[16]/input.235" -> "DetectionModel/C3[model]/C3[17]/Conv[cv1]/Conv2d[conv]/input.237"
+	"DetectionModel/Concat[model]/Concat[16]/input.235" -> "DetectionModel/C3[model]/C3[17]/Conv[cv2]/Conv2d[conv]/input.253"
+	"DetectionModel/C3[model]/C3[17]/Conv[cv1]/Conv2d[conv]/input.237" -> "DetectionModel/C3[model]/C3[17]/Conv[cv1]/LeakyReLU[act]/input.241"
+	"DetectionModel/C3[model]/C3[17]/Conv[cv1]/LeakyReLU[act]/input.241" -> "DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.243"
+	"DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.243" -> "DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.247"
+	"DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.247" -> "DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.249"
+	"DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.249" -> "DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10138"
+	"DetectionModel/C3[model]/C3[17]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10138" -> "DetectionModel/C3[model]/C3[17]/input.257"
+	"DetectionModel/C3[model]/C3[17]/Conv[cv2]/Conv2d[conv]/input.253" -> "DetectionModel/C3[model]/C3[17]/Conv[cv2]/LeakyReLU[act]/10165"
+	"DetectionModel/C3[model]/C3[17]/Conv[cv2]/LeakyReLU[act]/10165" -> "DetectionModel/C3[model]/C3[17]/input.257"
+	"DetectionModel/C3[model]/C3[17]/input.257" -> "DetectionModel/C3[model]/C3[17]/Conv[cv3]/Conv2d[conv]/input.259"
+	"DetectionModel/C3[model]/C3[17]/Conv[cv3]/Conv2d[conv]/input.259" -> "DetectionModel/C3[model]/C3[17]/Conv[cv3]/LeakyReLU[act]/input.263"
+	"DetectionModel/C3[model]/C3[17]/Conv[cv3]/LeakyReLU[act]/input.263" -> "DetectionModel/Conv[model]/Conv[18]/Conv2d[conv]/input.265"
+	"DetectionModel/C3[model]/C3[17]/Conv[cv3]/LeakyReLU[act]/input.263" -> "DetectionModel/Detect[model]/Detect[24]/Conv2d[m]/ModuleList[0]/10550"
+	"DetectionModel/Conv[model]/Conv[18]/Conv2d[conv]/input.265" -> "DetectionModel/Conv[model]/Conv[18]/LeakyReLU[act]/10222"
+	"DetectionModel/Conv[model]/Conv[18]/LeakyReLU[act]/10222" -> "DetectionModel/Concat[model]/Concat[19]/input.269"
+	"DetectionModel/Concat[model]/Concat[19]/input.269" -> "DetectionModel/C3[model]/C3[20]/Conv[cv1]/Conv2d[conv]/input.271"
+	"DetectionModel/Concat[model]/Concat[19]/input.269" -> "DetectionModel/C3[model]/C3[20]/Conv[cv2]/Conv2d[conv]/input.287"
+	"DetectionModel/C3[model]/C3[20]/Conv[cv1]/Conv2d[conv]/input.271" -> "DetectionModel/C3[model]/C3[20]/Conv[cv1]/LeakyReLU[act]/input.275"
+	"DetectionModel/C3[model]/C3[20]/Conv[cv1]/LeakyReLU[act]/input.275" -> "DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.277"
+	"DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.277" -> "DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.281"
+	"DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.281" -> "DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.283"
+	"DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.283" -> "DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10306"
+	"DetectionModel/C3[model]/C3[20]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10306" -> "DetectionModel/C3[model]/C3[20]/input.291"
+	"DetectionModel/C3[model]/C3[20]/Conv[cv2]/Conv2d[conv]/input.287" -> "DetectionModel/C3[model]/C3[20]/Conv[cv2]/LeakyReLU[act]/10333"
+	"DetectionModel/C3[model]/C3[20]/Conv[cv2]/LeakyReLU[act]/10333" -> "DetectionModel/C3[model]/C3[20]/input.291"
+	"DetectionModel/C3[model]/C3[20]/input.291" -> "DetectionModel/C3[model]/C3[20]/Conv[cv3]/Conv2d[conv]/input.293"
+	"DetectionModel/C3[model]/C3[20]/Conv[cv3]/Conv2d[conv]/input.293" -> "DetectionModel/C3[model]/C3[20]/Conv[cv3]/LeakyReLU[act]/input.297"
+	"DetectionModel/C3[model]/C3[20]/Conv[cv3]/LeakyReLU[act]/input.297" -> "DetectionModel/Conv[model]/Conv[21]/Conv2d[conv]/input.299"
+	"DetectionModel/C3[model]/C3[20]/Conv[cv3]/LeakyReLU[act]/input.297" -> "DetectionModel/Detect[model]/Detect[24]/Conv2d[m]/ModuleList[1]/10569"
+	"DetectionModel/Conv[model]/Conv[21]/Conv2d[conv]/input.299" -> "DetectionModel/Conv[model]/Conv[21]/LeakyReLU[act]/10390"
+	"DetectionModel/Conv[model]/Conv[21]/LeakyReLU[act]/10390" -> "DetectionModel/Concat[model]/Concat[22]/input.303"
+	"DetectionModel/Concat[model]/Concat[22]/input.303" -> "DetectionModel/C3[model]/C3[23]/Conv[cv1]/Conv2d[conv]/input.305"
+	"DetectionModel/Concat[model]/Concat[22]/input.303" -> "DetectionModel/C3[model]/C3[23]/Conv[cv2]/Conv2d[conv]/input.321"
+	"DetectionModel/C3[model]/C3[23]/Conv[cv1]/Conv2d[conv]/input.305" -> "DetectionModel/C3[model]/C3[23]/Conv[cv1]/LeakyReLU[act]/input.309"
+	"DetectionModel/C3[model]/C3[23]/Conv[cv1]/LeakyReLU[act]/input.309" -> "DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.311"
+	"DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv1]/Conv2d[conv]/input.311" -> "DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.315"
+	"DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv1]/LeakyReLU[act]/input.315" -> "DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.317"
+	"DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv2]/Conv2d[conv]/input.317" -> "DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10474"
+	"DetectionModel/C3[model]/C3[23]/Sequential[m]/Bottleneck[0]/Conv[cv2]/LeakyReLU[act]/10474" -> "DetectionModel/C3[model]/C3[23]/input.325"
+	"DetectionModel/C3[model]/C3[23]/Conv[cv2]/Conv2d[conv]/input.321" -> "DetectionModel/C3[model]/C3[23]/Conv[cv2]/LeakyReLU[act]/10501"
+	"DetectionModel/C3[model]/C3[23]/Conv[cv2]/LeakyReLU[act]/10501" -> "DetectionModel/C3[model]/C3[23]/input.325"
+	"DetectionModel/C3[model]/C3[23]/input.325" -> "DetectionModel/C3[model]/C3[23]/Conv[cv3]/Conv2d[conv]/input.327"
+	"DetectionModel/C3[model]/C3[23]/Conv[cv3]/Conv2d[conv]/input.327" -> "DetectionModel/C3[model]/C3[23]/Conv[cv3]/LeakyReLU[act]/input"
+	"DetectionModel/C3[model]/C3[23]/Conv[cv3]/LeakyReLU[act]/input" -> "DetectionModel/Detect[model]/Detect[24]/Conv2d[m]/ModuleList[2]/10588"
+}
