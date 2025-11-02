@@ -4,7 +4,7 @@
 ## Overview
 
 This repository provides a **modified YOLOv5 pipeline** optimized for **AMD Xilinx Vitis-AI 2.5**,  
-enabling seamless conversion of trained PyTorch models (`.pt`) into deployable **INT8 `.xmodel`**  
+enabling conversion of trained PyTorch models (`.pt`) into deployable **INT8 `.xmodel`**  
 files for the **KV260 DPU platform**.
 
 The workflow covers:
@@ -34,10 +34,8 @@ cd yolov5
 ## Repository Modifications for Vitis-AI
 
 The original Ultralytics YOLOv5 repository is written for standard PyTorch inference and exports.  
-However, **Vitis-AI 2.5** (and even 3.x) has a **limited operator set**, so a few layers in YOLOv5 must be
-adapted before quantization and compilation. (https://docs.amd.com/r/2.5-English/ug1414-vitis-ai/Currently-Supported-Operators)
-
-This section describes **what to change, where to change it, and why**.
+However, **Vitis-AI 2.5** has a **limited operator set**, so a few layers in YOLOv5 must be
+modified before quantization and compilation. (https://docs.amd.com/r/2.5-English/ug1414-vitis-ai/Currently-Supported-Operators)
 
 ### 1. Replace SiLU with LeakyReLU
 In `models/common.py` and `models/experimental.py` , replace:
