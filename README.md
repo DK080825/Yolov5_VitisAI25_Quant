@@ -48,7 +48,7 @@ self.act = nn.LeakyReLU(26/256, inplace=True)
 ```
 After that, you need fine-tune the model for several epochs to recover accuracy before quantization.
 ```bash
-python train.py --weights weights/best.pt --cfg models/yolov5n.yaml --data data/coco128.yaml --epochs 50 --img 640
+python train.py --weights weights/best.pt --cfg models/yolov5n.yaml --data data/coco.yaml --epochs 50 --img 640
 ```
 ### 2. Post-Processing Refactor for Vitis-AI Compatibility
 Since the `permute` and `view` operations in the YOLOv5 detection head are not supported by Vitis-AI,  
@@ -135,7 +135,7 @@ Run the calibration process:
   python ptq_yolov5_vai_quant.py \
   --yaml models/yolov5n.yaml \
   --weights refined_model.pt \
-  --dataset coco128 \
+  --dataset calib_dir \
   --quant_mode calib \
   --build_dir build_y5n \
   --imgsz 640 \
@@ -155,7 +155,7 @@ Run the export process:
   python ptq_yolov5_vai_quant.py \
   --yaml models/yolov5n.yaml \
   --weights refined_model.pt \
-  --dataset coco128 \
+  --dataset calib_dir \
   --quant_mode test \
   --build_dir build_y5n \
   --imgsz 640 \
