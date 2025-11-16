@@ -180,5 +180,5 @@ Run the compilation command:
 ## Run inference
 
 ```bash
-python detect.py --weights yolov5n.pt --yaml models/yolov5n.yaml --source data/images --data data/coco128.yaml --conf-thres 0.3  --conf-thres 0.35
+python detect.py --weights yolov5n.pt --yaml models/yolov5n.yaml --source data/images --data data/coco.yaml --conf-thres 0.3  --conf-thres 0.35
 ```
